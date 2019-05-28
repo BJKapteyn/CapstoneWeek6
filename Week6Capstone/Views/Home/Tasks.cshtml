@@ -1,0 +1,54 @@
+﻿@using Week6Capstone.Models;
+@{ 
+    User user = (User)Session["User"];
+}
+
+<div id="tasks">
+    <table id="taskTable">
+        <tr>
+            <th>
+                <p></p>
+            </th>
+            <th>
+                <p>Task</p>
+            </th>
+            <th>
+                <p>User</p>
+            </th>
+            <th>
+                <p>Due Date</p>
+            </th>
+            <th>
+
+            </th>
+        </tr>
+        @{ 
+            for(int i = 0; i < Tasks.tasks.Count; i++)
+            {
+                string idIndex = "task" + i;
+                int index = i + 1;
+                <tr class="task" id="@i">
+                    <td>
+                        <h3>Task @index</h3>
+                    </td>
+                    <td>
+                        <h4>@Tasks.tasks[i].Description</h4>
+                    </td>
+                    <td>
+                        <h4>@user.Name</h4>
+                    </td>
+                    <td>
+                        <h4>@Tasks.tasks[i].DueDate</h4>
+                    </td>
+                    <td>
+                        <form class="taskForm" action="DeleteTask">
+                            <input name="@i" class="hiddenTask" />
+                            <input type="submit" value="DELETE" />
+                        </form>
+                    </td>
+                </tr>
+            }
+
+        }
+    </table>
+</div>

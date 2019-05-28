@@ -1,0 +1,68 @@
+﻿<form action="~/Home/RegisterUser">
+    <table  id="registerTable">
+        <tr>
+            <td>
+                <p>Name:</p>
+            </td>
+            <td>
+                <input type="text" name="Name" placeholder="Enter name" required />
+            </td>
+            <td>
+                <p class="error"></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>UserName:</p>
+            </td>
+            <td>
+                <input type="text" name="UserName" placeholder="Enter username" required />
+            </td>
+            <td>
+                <p class="error"></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Email:</p>
+            </td>
+            <td>
+                <input  type="email" name="Email" placeholder="Enter email" required />
+            </td>
+            <td>
+                <p class="error"></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Password:</p>
+            </td>
+            <td>
+                <input id="pass" type="password" name="Password" placeholder="Enter Password" required />
+            </td>
+            <td>
+                <p class="error"></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Re-Enter Password:</p>
+            </td>
+            <td>
+                <input id="rePass" name="RePass" type="password" placeholder="Re-enter Password" required />
+            </td>
+            <td>
+                <p id="passError"></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+
+            </td>
+            <td>
+                <input id="submit" type="submit" />
+            </td>
+        </tr>
+    </table>
+</form>
+<script src="~/Scripts/JavaScript.js"></script>

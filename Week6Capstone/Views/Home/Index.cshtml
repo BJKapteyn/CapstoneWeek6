@@ -1,0 +1,50 @@
+﻿@using Week6Capstone.Models;
+
+@{
+    User user = (User)Session["User"];
+}
+
+@{ 
+    <h2> @Session["Error"]</h2>
+    if (user == null)
+    {
+    <form id="login" action="~/Home/Login">
+        <table id="loginTable">
+            <tr>
+                <td>
+                    <p>Username:</p>
+                </td>
+                <td>
+                    <input type="text" placeholder="Enter Username" name="UserName" />
+                </td>
+                <td>
+                    <p class="error"></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Password:</p>
+                </td>
+                <td>
+                    <input type="password" placeholder="Enter Password" name="Password" />
+                </td>
+                <td>
+                    <p class="error"></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.ActionLink("Register", "Register", "Home")
+                </td>
+                <td>
+                    <input type="submit" />
+                </td>
+            </tr>
+        </table>
+    </form>
+    }
+    else
+    {
+        <h2>Welcome @user.Name! Let's see what your @Html.ActionLink("tasks", "Tasks", "Home") are.</h2>
+    }
+}
