@@ -132,7 +132,7 @@
     </Compile>
     <Compile Include="Models\LogUser.cs" />
     <Compile Include="Models\task.cs" />
-    <Compile Include="Models\tasks.cs" />
+    <Compile Include="Models\TaskList.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -178,6 +178,7 @@
     <Content Include="Views\Home\Logout.cshtml" />
     <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Home\RegisterUser.cshtml" />
+    <Content Include="Views\Home\AddTask.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

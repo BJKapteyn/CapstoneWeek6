@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Week6Capstone.Models
 {
-    public static class Users
+    public class Users
     {
         public static List<User> users = new List<User>();
 

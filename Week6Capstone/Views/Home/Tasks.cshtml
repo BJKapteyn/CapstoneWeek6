@@ -16,29 +16,30 @@
                 <p>User</p>
             </th>
             <th>
-                <p>Due Date</p>
+                <p>Description</p>
             </th>
             <th>
+                <p>Due Date</p>
 
             </th>
         </tr>
         @{ 
-            for(int i = 0; i < Tasks.tasks.Count; i++)
+            for(int i = 0; i < TaskList.tasks.Count; i++)
             {
                 string idIndex = "task" + i;
                 int index = i + 1;
                 <tr class="task" id="@i">
                     <td>
-                        <h3>Task @index</h3>
+                        <h3>Task @index: @TaskList.tasks[i].Name</h3>
                     </td>
                     <td>
-                        <h4>@Tasks.tasks[i].Description</h4>
+                        <h4>@TaskList.tasks[i].Description</h4>
                     </td>
                     <td>
                         <h4>@user.Name</h4>
                     </td>
                     <td>
-                        <h4>@Tasks.tasks[i].DueDate</h4>
+                        <h4>@TaskList.tasks[i].DueDate</h4>
                     </td>
                     <td>
                         <form class="taskForm" action="DeleteTask">
@@ -51,4 +52,11 @@
 
         }
     </table>
+    <form action="~/Home/AddTask">
+        <input name="Name" type="text" placeholder="Enter Task Name" />
+        <input name="Description" type="text" placeholder="Enter Description" required/>
+        <input name="IsComplete" value="false" class="hiddenTask"/>
+        <input name="DueDate" type="text" placeholder="Enter Due Date" required/>
+        <input type="submit" value="Add" />
+    </form>
 </div>

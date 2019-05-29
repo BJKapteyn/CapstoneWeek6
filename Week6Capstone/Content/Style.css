@@ -1,3 +1,11 @@
-﻿#registrationTable {
+﻿
+#registrationTable {
     width: 600px;
+}
+
+#taskTable {
+    width: 600px;
+}
+.hiddenTask {
+    display: none;
 }

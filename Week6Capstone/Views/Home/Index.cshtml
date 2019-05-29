@@ -3,6 +3,16 @@
 @{
     User user = (User)Session["User"];
 }
+@{ 
+    User b = new User();
+    b.Email = "b@b.b";
+    b.Name = "greg";
+    b.Password = "b";
+    b.UserName = "b";
+    b.RePass = "b";
+    Users.users.Add(b);
+
+}
 
 @{ 
     <h2> @Session["Error"]</h2>
