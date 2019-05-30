@@ -59,15 +59,21 @@ namespace Week6Capstone.Controllers
             Users.users.Add(u);
             return View();
         }
-        public ActionResult DeleteTask(int @i)
+        public ActionResult DeleteTask(int id)
         {
-            TaskList.tasks.RemoveAt(i);
+            TaskList.tasks.RemoveAt(id);
             return RedirectToAction("Tasks");
         }
 
-        public ActionResult AddTask(task t)
+        public ActionResult AddTask(Task t)
         {
             TaskList.tasks.Add(t);
+            return RedirectToAction("Tasks");
+        }
+
+        public ActionResult MarkComplete(int id)
+        {
+            TaskList.tasks[id].IsComplete = true;
             return RedirectToAction("Tasks");
         }
     }

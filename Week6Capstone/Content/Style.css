@@ -1,11 +1,19 @@
-﻿
+﻿tr:nth-child(2n+1) {
+    background: rgba(138, 138, 138, 0.12);
+}
+
 #registrationTable {
     width: 600px;
 }
 
 #taskTable {
     width: 600px;
+    border: 1px solid black;
 }
 .hiddenTask {
     display: none;
+}
+
+#taskTable {
+    width: 100%;
 }

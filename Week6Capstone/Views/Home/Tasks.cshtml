@@ -13,13 +13,19 @@
                 <p>Task</p>
             </th>
             <th>
-                <p>User</p>
-            </th>
-            <th>
                 <p>Description</p>
             </th>
             <th>
+                <p>User</p>
+            </th>
+            <th>
                 <p>Due Date</p>
+
+            </th>
+            <th>
+
+            </th>
+            <th>
 
             </th>
         </tr>
@@ -28,7 +34,7 @@
             {
                 string idIndex = "task" + i;
                 int index = i + 1;
-                <tr class="task" id="@i">
+                <tr class="task" style="background: @TaskList.AddColor(i)">
                     <td>
                         <h4>Task @index</h4>
                     </td>
@@ -45,8 +51,21 @@
                         <h4>@TaskList.tasks[i].DueDate</h4>
                     </td>
                     <td>
+                        @if (!TaskList.tasks[i].IsComplete)
+                        {
+                            <form class="taskForm" action="MarkComplete">
+                                <input name="id" value="@i" class="hiddenTask" />
+                                <input type="submit" value="Mark Complete" />
+                            </form>
+                        }
+                        else
+                        {
+                            <p>Task Complete!</p>
+                        }
+                    </td>
+                    <td>
                         <form class="taskForm" action="DeleteTask">
-                            <input name="@i" class="hiddenTask" />
+                            <input name="id" value="@i"class="hiddenTask" />
                             <input type="submit" value="DELETE" />
                         </form>
                     </td>
@@ -55,10 +74,9 @@
 
         }
     </table>
-    <form action="~/Home/AddTask">
+    <form action="~/Home/AddTask" id="taskForm">
         <input name="Name" type="text" placeholder="Enter Task Name" />
         <input name="Description" type="text" placeholder="Enter Description" required/>
-        <input name="IsComplete" value="false" class="hiddenTask"/>
         <input name="DueDate" type="text" placeholder="Enter Due Date" required/>
         <input type="submit" value="Add" />
     </form>

@@ -179,6 +179,8 @@
     <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Home\RegisterUser.cshtml" />
     <Content Include="Views\Home\AddTask.cshtml" />
+    <Content Include="Views\Home\DeleteTask.cshtml" />
+    <Content Include="Views\Home\MarkComplete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

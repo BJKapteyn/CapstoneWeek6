@@ -5,8 +5,19 @@ using System.Web;
 
 namespace Week6Capstone.Models
 {
-    public class task
+    public class Task
     {
+        public Task()
+        {
+
+        }
+
+        public Task(string description, string dueDate, string name)
+        {
+            Description = description;
+            DueDate = dueDate;
+            Name = name;
+        }
         public bool IsComplete { get; set; } = false;
         public string Description { get; set; }
         public string DueDate { get; set; }
